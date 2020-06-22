@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "5ef0f283fbfa2a0de880aa6a"
+  },
+  "id": 1,
+  "nama": "item1"
+},{
+  "_id": {
+    "$oid": "5ef0f2a3fbfa2a0de880aa6b"
+  },
+  "id": 2,
+  "nama": "item2"
+},{
+  "_id": {
+    "$oid": "5ef0f2a6fbfa2a0de880aa6c"
+  },
+  "id": 3,
+  "nama": "item3"
+}]

@@ -1,17 +1,25 @@
-const data = require('../models/data');
+const Dummy = require('../models/dummy');
 
-exports.get_data = function(req, res) {
+exports.get_data = async function(req, res) {
     
-    console.log(data);
+    const data = await Dummy.find();
     return res.render('index', {data: data});
 };
 
-exports.post_data = function(req, res) {
+exports.post_data = async function(req, res) {
+    // test env variables
     console.log(process.env.SECRET_KEY);
+
+    //initial
+    let data = await Dummy.find();
     
-    let idGenerator = data.length;
-    console.log(idGenerator);
-    let newItem = {id: idGenerator+1, name: 'item'+(idGenerator+1)};
-    data.push(newItem);
+    let newItem = new Dummy({
+        id: data.length+1, 
+        name: 'item'+(data.length+1)
+    });
+    newItem.save();
+
+    //refresh
+    data = await Dummy.find();
     return res.render('index', {data: data});
 };
