@@ -11,5 +11,26 @@
     <%= body %>
     <br>
     After
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nama</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < data.length; i++) { %>
+                <tr>
+                    <td><%= data[i].id %></td>
+                    <td><%= data[i].name %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <form action="/" method="post">
+        <button type="submit">Post me!</button>
+    </form>
 </body>
 </html>
